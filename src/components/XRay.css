@@ -1,0 +1,122 @@
+.xray-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  z-index: 500;
+  display: flex; align-items: flex-end; justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.xray-modal {
+  background: var(--white);
+  border-radius: 24px 24px 0 0;
+  width: 100%; max-width: 430px;
+  max-height: 88vh;
+  display: flex; flex-direction: column;
+  animation: slideUp 0.3s cubic-bezier(.4,0,.2,1);
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to   { transform: none; }
+}
+
+.xray-header {
+  padding: 20px 20px 0;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.xray-title-row {
+  display: flex; align-items: center; gap: 14px;
+}
+.xray-char { font-size: 52px; line-height: 1; color: var(--text); }
+.xray-pinyin { font-size: 16px; color: var(--mint-dark); font-weight: 700; }
+.xray-meaning { font-size: 14px; color: var(--text2); font-weight: 600; }
+.xray-close {
+  margin-left: auto;
+  width: 32px; height: 32px; border-radius: 50%;
+  border: none; background: var(--border);
+  cursor: pointer; font-size: 14px; color: var(--text2);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.xray-body {
+  overflow-y: auto; padding: 16px 20px 24px; flex: 1;
+}
+
+/* Decompose */
+.xray-story-box {
+  background: var(--mint-light);
+  border-radius: var(--r-sm);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border-left: 3px solid var(--mint);
+}
+.xray-story-label { font-size: 12px; font-weight: 700; color: var(--mint-dark); margin-bottom: 4px; }
+.xray-story { font-size: 14px; color: var(--text2); line-height: 1.6; }
+
+.xray-components { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.xray-comp-card {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px;
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+}
+.xray-comp-char { font-size: 36px; min-width: 44px; text-align: center; }
+.xray-comp-info { flex: 1; }
+.xray-comp-meaning { font-size: 14px; font-weight: 700; }
+.xray-comp-desc { font-size: 12px; color: var(--text3); margin-top: 2px; }
+.xray-comp-emoji { font-size: 28px; }
+
+.xray-formula {
+  text-align: center; font-size: 22px; padding: 12px;
+  background: var(--bg); border-radius: var(--r-sm);
+}
+.xray-formula-plus, .xray-formula-eq { color: var(--text3); margin: 0 4px; }
+.xray-formula-result { color: var(--mint-dark); font-size: 28px; }
+
+.xray-no-data { text-align: center; padding: 2rem; color: var(--text3); font-size: 14px; }
+.xray-char-big { font-size: 80px; margin-top: 12px; opacity: 0.15; }
+
+/* Stroke */
+.xray-stroke { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.xray-stroke-canvas {
+  width: 240px; height: 240px;
+  border: 2px solid var(--border);
+  border-radius: var(--r);
+  background: var(--white);
+  position: relative; overflow: hidden;
+}
+.xray-writer { width: 240px; height: 240px; }
+.xray-stroke-fallback {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; width: 100%; height: 100%;
+}
+.xray-stroke-btns { display: flex; gap: 10px; }
+.xray-stroke-rules {
+  width: 100%;
+  background: var(--bg); border-radius: var(--r-sm);
+  padding: 14px 16px;
+}
+.xray-rule-title { font-size: 13px; font-weight: 700; color: var(--text2); margin-bottom: 10px; }
+.xray-rule-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--text2); padding: 4px 0;
+}
+
+/* Radical grid */
+.xray-radical-title { font-size: 14px; font-weight: 700; color: var(--text2); margin-bottom: 12px; }
+.xray-radical-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+}
+.xray-rad-item {
+  background: var(--bg); border-radius: var(--r-sm);
+  padding: 10px 6px; text-align: center;
+  border: 1.5px solid var(--border);
+  transition: border-color 0.15s;
+  cursor: default;
+}
+.xray-rad-item:hover { border-color: var(--mint); }
+.xray-rad-char { font-size: 28px; margin-bottom: 2px; }
+.xray-rad-emoji { font-size: 18px; margin-bottom: 2px; }
+.xray-rad-name { font-size: 11px; color: var(--text3); font-weight: 600; }

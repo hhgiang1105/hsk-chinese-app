@@ -1,0 +1,153 @@
+.gami-screen { padding-bottom: 8px; }
+
+.gami-tabs {
+  display: flex; background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 12px;
+}
+.gami-tab {
+  flex: 1; padding: 14px 4px;
+  background: none; border: none;
+  font-family: var(--font); font-size: 13px; font-weight: 700;
+  color: var(--text3); cursor: pointer;
+  border-bottom: 2px solid transparent; transition: all 0.2s;
+  position: relative;
+}
+.gami-tab.active { color: var(--mint); border-bottom-color: var(--mint); }
+.gami-badge-dot {
+  position: absolute; top: 8px; right: 8px;
+  background: var(--orange); color: #fff;
+  width: 16px; height: 16px; border-radius: 50%;
+  font-size: 10px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Panda home */
+.gami-home { padding: 16px 20px; display: flex; flex-direction: column; gap: 14px; }
+
+.gami-panda-area {
+  text-align: center; padding: 20px;
+  background: linear-gradient(135deg, #E8F8F6, #F0FBF9);
+  border-radius: var(--r); position: relative; overflow: hidden;
+}
+.gami-panda-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 60%, rgba(77,191,176,0.1) 0%, transparent 70%);
+}
+.gami-panda {
+  position: relative; z-index: 1;
+  background: none; border: none; cursor: pointer;
+  display: inline-block; margin-bottom: 8px;
+  transition: transform 0.2s;
+}
+.gami-panda:hover { transform: scale(1.05); }
+.gami-panda.bounce { animation: pandaBounce 0.5s ease; }
+@keyframes pandaBounce {
+  0%,100% { transform: scale(1) translateY(0); }
+  25% { transform: scale(1.15) translateY(-8px); }
+  50% { transform: scale(0.95) translateY(4px); }
+  75% { transform: scale(1.05) translateY(-4px); }
+}
+.gami-panda-emoji { font-size: 80px; display: block; line-height: 1; }
+.gami-panda-hat {
+  position: absolute; top: -10px; left: 50%;
+  transform: translateX(-50%); font-size: 36px;
+}
+.gami-panda-speech {
+  background: var(--white); border-radius: 12px; padding: 8px 14px;
+  font-size: 13px; color: var(--text2); font-weight: 600;
+  display: inline-block; margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.gami-panda-name { font-size: 16px; font-weight: 800; color: var(--text); }
+.gami-panda-tap { font-size: 11px; color: var(--text3); margin-top: 4px; }
+
+.gami-level-card { }
+.gami-level-row { display: flex; align-items: center; justify-content: space-between; }
+.gami-level-title { font-size: 16px; font-weight: 800; color: var(--text); }
+.gami-level-desc { font-size: 12px; color: var(--text3); margin-top: 2px; }
+.gami-xp-badge {
+  background: var(--mint-light); color: var(--mint-dark);
+  padding: 6px 12px; border-radius: 100px;
+  font-size: 14px; font-weight: 800;
+}
+.gami-level-next { font-size: 12px; color: var(--text3); margin-top: 8px; }
+
+.gami-stats-row {
+  display: flex; gap: 10px;
+}
+.gami-stat-item {
+  flex: 1; background: var(--white); border-radius: var(--r-sm);
+  padding: 12px; text-align: center;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+}
+.gami-stat-val { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+.gami-stat-lbl { font-size: 11px; color: var(--text3); font-weight: 600; }
+
+.gami-streak-card { }
+.gami-streak-title { font-size: 14px; font-weight: 700; color: var(--text2); margin-bottom: 12px; }
+.gami-streak-days { display: flex; justify-content: space-between; }
+.gami-day-col { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.gami-day-dot {
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 2px solid var(--border); background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700; color: var(--text3);
+}
+.gami-day-dot.done { background: var(--mint); border-color: var(--mint); color: #fff; }
+.gami-day-lbl { font-size: 11px; color: var(--text3); font-weight: 600; }
+.gami-streak-reward {
+  margin-top: 12px; background: var(--orange-light);
+  border-radius: var(--r-xs); padding: 10px 14px;
+  font-size: 13px; color: var(--orange); font-weight: 700;
+}
+
+/* Missions */
+.gami-missions { padding: 16px 20px; }
+.gami-missions-header { margin-bottom: 14px; }
+.gami-missions-title { font-size: 18px; font-weight: 800; color: var(--text); }
+.gami-missions-sub { font-size: 13px; color: var(--text3); margin-top: 2px; }
+.gami-missions-list { display: flex; flex-direction: column; gap: 10px; }
+.gami-mission-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px; background: var(--white);
+  border: 2px solid var(--border); border-radius: var(--r-sm);
+  transition: border-color 0.2s;
+}
+.gami-mission-item.done { border-color: #C8E6C9; background: #F9FBE7; }
+.gami-mission-icon { font-size: 28px; flex-shrink: 0; }
+.gami-mission-info { flex: 1; min-width: 0; }
+.gami-mission-label { font-size: 14px; font-weight: 700; color: var(--text); }
+.gami-mission-prog { font-size: 11px; color: var(--text3); margin-top: 4px; }
+.gami-mission-xp {
+  flex-shrink: 0; text-align: center;
+  font-size: 15px; font-weight: 800; color: var(--orange);
+}
+.gami-mission-xp.done { color: #4CAF50; font-size: 20px; }
+.gami-xp-label { display: block; font-size: 10px; font-weight: 600; color: var(--text3); }
+.gami-all-done {
+  text-align: center; padding: 2rem;
+  margin-top: 16px; background: var(--mint-light);
+  border-radius: var(--r);
+}
+.gami-all-done-emoji { font-size: 48px; margin-bottom: 8px; }
+.gami-all-done-title { font-size: 20px; font-weight: 800; color: var(--mint-dark); }
+.gami-all-done-sub { font-size: 14px; color: var(--text2); margin-top: 4px; }
+
+/* Achievements */
+.gami-achievements { padding: 16px 20px; }
+.gami-ach-summary { font-size: 14px; color: var(--text2); margin-bottom: 14px; font-weight: 600; }
+.gami-ach-count { font-size: 28px; font-weight: 800; color: var(--mint); }
+.gami-ach-total { font-size: 14px; }
+.gami-ach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.gami-ach-item {
+  background: var(--white); border-radius: var(--r-sm);
+  padding: 14px 8px; text-align: center;
+  border: 2px solid var(--border);
+  transition: all 0.2s;
+}
+.gami-ach-item.earned { border-color: var(--mint-mid); background: var(--mint-light); }
+.gami-ach-item.locked { opacity: 0.5; }
+.gami-ach-icon { font-size: 28px; margin-bottom: 6px; }
+.gami-ach-label { font-size: 12px; font-weight: 800; color: var(--text); }
+.gami-ach-desc { font-size: 11px; color: var(--text3); margin-top: 2px; }
